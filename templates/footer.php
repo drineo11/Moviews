@@ -20,9 +20,18 @@
 			</div>
 			<div id="footer-links-container">
 				<ul>
-					<li><a href="#"> Adicionar filme </a></li>
-					<li><a href="#"> Adicionar crítica </a></li>
-					<li><a href="#"> Entrar / Registrar </a></li>
+					<li><a href="contact_us.php"> Fale Conosco </a></li>
+					<?php if($userData): ?>
+					<li><a href="<?= $BASE_URL ?>editprofile.php" class="nav-link bold">
+					<?= $userData -> name ?> </a></li>
+					<?php else: ?>
+					<li class="nav-item">
+					<a href="<?= $BASE_URL ?>auth.php" class="nav-link">
+					Entrar / Cadastrar
+					</a>
+					</li>
+					<?php endif; ?>
+
 				</ul>
 			</div>
 			<p>
