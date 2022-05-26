@@ -25,7 +25,7 @@
 	<!-- Parte dos Carroussel -->
 	<h2 class="section-title"> Filmes novos </h2>
 	<p class="section-description">
-		Veja as avaliaçãos dos últimos filmes adicionados, em formato de carrossel.
+		Veja as avaliaçãos dos últimos filmes adicionados.
 	</p>
 	<div class="container-carousel">
 		<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="3600">

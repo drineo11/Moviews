@@ -25,7 +25,7 @@
 	<!-- Parte dos Carroussel -->
 	<h2 class="section-title"> New movies </h2>
 	<p class="section-description">
-		See the reviews of the latest movies added, in carousel format.
+		See the reviews of the latest movies added.
 	</p>
 	<div class="container-carousel">
 		<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="3600">

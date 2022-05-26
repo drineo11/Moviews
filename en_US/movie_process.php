@@ -21,7 +21,17 @@
 		// Define as variáveis para os dados do novo filme.
 		$title = filter_input(INPUT_POST, "title");
 		$description = filter_input(INPUT_POST, "description");
+
+		// Verifica se o link do trailer está válido.
 		$trailer = filter_input(INPUT_POST, "trailer");
+		if ($trailer) {
+			if (!strpos($trailer, "embed")) {
+				$trailer = str_replace("youtube.com/", "youtube.com/embed/", $trailer);
+				$trailer = str_replace("youtu.be/", "youtube.com/embed/", $trailer);
+				$trailer = str_replace("embed/watch?v=", "embed/", $trailer);
+			}
+		}
+
 		$category = filter_input(INPUT_POST, "category");
 		$length = filter_input(INPUT_POST, "length");
 
@@ -36,7 +46,8 @@
 			$movie -> description = $description;
 			$movie -> trailer = $trailer;
 			$movie -> category = $category;
-			$movie -> length = $length;
+			if ($length) $movie -> length = $length;
+			else $movie -> length = 0;
 			$movie -> users_id = $userData -> id;
 			
 			// Verifica se o usuário inseriu uma imagem para o novo filme.
@@ -84,6 +95,16 @@
 		$title = filter_input(INPUT_POST, "title");
 		$description = filter_input(INPUT_POST, "description");
 		$trailer = filter_input(INPUT_POST, "trailer");
+
+		// Verifica se o link do trailer está válido.
+		if ($trailer) {
+			if (!strpos($trailer, "embed")) {
+				$trailer = str_replace("youtube.com/", "youtube.com/embed/", $trailer);
+				$trailer = str_replace("youtu.be/", "youtube.com/embed/", $trailer);
+				$trailer = str_replace("embed/watch?v=", "embed/", $trailer);
+			}
+		}
+
 		$category = filter_input(INPUT_POST, "category");
 		$length = filter_input(INPUT_POST, "length");
 		$id = filter_input(INPUT_POST, "id");
@@ -101,7 +122,8 @@
 					$movieData -> description = $description;
 					$movieData -> trailer = $trailer;
 					$movieData -> category = $category;
-					$movieData -> length = $length;
+					if ($length) $movieData -> length = $length;
+					else $movieData -> length = 0;
 					
 					// Verifica se o usuário inseriu uma imagem para o filme.
 					if (isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {

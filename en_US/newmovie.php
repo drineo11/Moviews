@@ -55,16 +55,16 @@
 			</div>
 			<div class="form-group">
 				<label for="trailer">
-					Trailer and description:
+					Trailer:
 				</label>
 				<div class="form-trailer">
-					<input type="text" class="form-control t1" id="trailer" name="trailer" placeholder="Insert the trailer link">
-					<a href="<?= $BASE_URL ?>trailer_tutorial.php" class="btn card-btn t2">
-						<i class="fa fa-file"></i> HOW?
-					</a>
+					<input type="text" class="form-control" id="trailer" name="trailer" placeholder="Insert the trailer link">
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="trailer">
+					Description:
+				</label>
 				<textarea name="description" id="description" rows="5" class="form-control" placeholder="Describe your movie. . ."></textarea>
 			</div>
 			<input type="submit" class="btn card-btn" value="Add movie">
